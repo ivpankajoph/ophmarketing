@@ -30,7 +30,6 @@ const navigationItems = [
   { id: "analytics", label: "Analytics", icon: BarChart3 },
   { id: "reports", label: "Reports", icon: FileText },
   { id: "facebookPages", label: "Facebook Pages", icon: Facebook },
-  { id: "audience", label: "Audience", icon: Users },
   { id: "settings", label: "Settings", icon: Settings },
 ];
 
