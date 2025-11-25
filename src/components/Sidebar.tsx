@@ -6,7 +6,7 @@ import {
   MessageSquare,
   BarChart3,
   FileText,
-  Users,
+
   Settings,
   ChevronLeft,
   ChevronRight,
