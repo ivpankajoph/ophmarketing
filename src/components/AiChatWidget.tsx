@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import {
-
   Send,
   X,
   Bot,
@@ -15,6 +14,23 @@ const AiChatWidget = () => {
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [firstOpen, setFirstOpen] = useState(true); // 👈 NEW
+
+  const handleOpen = () => {
+    setOpen(true);
+
+    // 👇 Auto greeting only first time
+    if (firstOpen) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "ai",
+          text: "Hello Sparsh 👋, do you have any query about your marketing dashboard?",
+        },
+      ]);
+      setFirstOpen(false);
+    }
+  };
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -31,7 +47,7 @@ const AiChatWidget = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // <-- Replace with your key
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           model: "gpt-4o-mini",
@@ -62,7 +78,7 @@ const AiChatWidget = () => {
     <>
       {/* Floating Chat Button */}
       <button
-        onClick={() => setOpen(true)}
+        onClick={handleOpen}
         className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-full shadow-xl flex items-center gap-2"
       >
         <Sparkles className="w-5 h-5" />
