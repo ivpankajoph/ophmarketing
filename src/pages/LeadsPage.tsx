@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getLeadsByFormId } from "../api/facebookApi";
 import type { Lead, LeadField } from "../types/facebookTypes";
+import Loader from "../components/Loader";
 
 const LeadsPage = () => {
   const { formId } = useParams<{ formId: string }>();
@@ -47,7 +48,7 @@ const LeadsPage = () => {
 
   const goBack = () => navigate(-1);
 
-  if (loading) return <div className="p-6 text-gray-600">Loading leads...</div>;
+  if (loading) return <Loader/>;
 
   return (
     <div className="p-6 max-w-7xl mx-auto">

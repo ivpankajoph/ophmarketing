@@ -6,12 +6,12 @@ import {
   MessageSquare,
   BarChart3,
   FileText,
-
   Settings,
   ChevronLeft,
   ChevronRight,
   LogOut,
   Facebook,
+  FlameIcon,
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
@@ -28,6 +28,7 @@ const navigationItems = [
   { id: "campaigns", label: "Campaigns", icon: Megaphone },
   { id: "social", label: "Social Media", icon: MessageSquare },
   { id: "analytics", label: "Analytics", icon: BarChart3 },
+  { id: "Chatbot", label: "Custom Chatbot", icon: FlameIcon },
   { id: "reports", label: "Reports", icon: FileText },
   { id: "facebookPages", label: "Facebook Pages", icon: Facebook },
   { id: "settings", label: "Settings", icon: Settings },
@@ -39,6 +40,7 @@ const routes: Record<string, string> = {
   campaigns: "/campaigns",
   social: "/social",
   analytics: "/analytics",
+  Chatbot: "/chatbot",
   reports: "/reports",
   facebookPages: "/facebook-pages",
   audience: "/audience",
@@ -114,23 +116,6 @@ const Sidebar = ({
         {!sidebarCollapsed && (
           <>
             <div className="my-6 border-t border-gray-200"></div>
-            <div className="bg-linear-to-br from-blue-500 to-blue-700 rounded-lg p-4 text-white">
-              <h3 className="text-sm font-semibold mb-3">This Month</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs opacity-90">Revenue</span>
-                  <span className="text-sm font-bold">$124.5K</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs opacity-90">Conversions</span>
-                  <span className="text-sm font-bold">3,420</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs opacity-90">ROI</span>
-                  <span className="text-sm font-bold">245%</span>
-                </div>
-              </div>
-            </div>
           </>
         )}
       </nav>
