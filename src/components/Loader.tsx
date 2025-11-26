@@ -1,4 +1,3 @@
-import React from 'react'
 import { Mosaic } from 'react-loading-indicators'
 
 const Loader = () => {
