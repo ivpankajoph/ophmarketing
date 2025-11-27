@@ -12,6 +12,7 @@ import {
   LogOut,
   Facebook,
   FlameIcon,
+  FastForwardIcon,
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
@@ -29,7 +30,9 @@ const navigationItems = [
   { id: "social", label: "Social Media", icon: MessageSquare },
   { id: "analytics", label: "Analytics", icon: BarChart3 },
   { id: "Chatbot", label: "Custom Chatbot", icon: FlameIcon },
+  { id: "automation", label: "Automation", icon: FastForwardIcon },
   { id: "reports", label: "Reports", icon: FileText },
+  { id: "whatsapp", label: "WhatsApp", icon: MessageSquare },
   { id: "facebookPages", label: "Facebook Pages", icon: Facebook },
   { id: "settings", label: "Settings", icon: Settings },
 ];
@@ -42,6 +45,8 @@ const routes: Record<string, string> = {
   analytics: "/analytics",
   Chatbot: "/chatbot",
   reports: "/reports",
+  automation:"/automation",
+  whatsapp: "/whatsapp",
   facebookPages: "/facebook-pages",
   audience: "/audience",
   settings: "/settings",

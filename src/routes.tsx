@@ -9,6 +9,8 @@ import ReportsPage from "./pages/ReportsPage";
 import ConnectPlatformsPage from "./pages/ConnectPlatformsPage";
 import SettingsPage from "./pages/Settings";
 import ChatbotPage from "./pages/Chatbot";
+import WhatsAppTemplateBuilder from "./components/CreateTemplate";
+import LeadsManager from "./pages/LeadsManagement";
 
 // ... other pages
 
@@ -23,6 +25,9 @@ const router = createBrowserRouter([
       { path: "/social", element: <SocialMediaPage /> },
       { path: "/analytics", element: <AnalyticsPage /> },
       { path: "/chatbot", element: <ChatbotPage /> },
+      { path: "/whatsapp", element: <WhatsAppTemplateBuilder /> },
+      { path: "/automation", element: <LeadsManager /> },
+
       { path: "/reports", element: <ReportsPage /> },
       { path: "/facebook-pages", element: <ConnectPlatformsPage /> },
       { path: "/settings", element: <SettingsPage /> },
